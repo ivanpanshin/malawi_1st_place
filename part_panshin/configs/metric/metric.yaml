@@ -1,0 +1,4 @@
+_target_: reg_malawi.metrics.pipeline_metrics.Metrics
+main_metric: val_0/mae_overall
+main_metric_direction: minimize
+track_val_loss: true

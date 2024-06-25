@@ -1,0 +1,7 @@
+trainer:
+  _target_: reg_malawi.trainer.trainer.Trainer
+  _recursive_: false
+
+trainer_hyps:
+  test_dataset_id_attribute: ids
+  test_preds_output_path: final_subs/maxvit_fold0.csv

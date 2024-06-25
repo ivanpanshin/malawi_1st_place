@@ -1,0 +1,4 @@
+- _target_: reg_malawi.callbacks.model.ChangeModelDevice
+- _target_: reg_malawi.callbacks.model.TrainEval
+- _target_: reg_malawi.callbacks.model.LoadModelFromDisk
+  path: final_weights/maxvit_weights.pt

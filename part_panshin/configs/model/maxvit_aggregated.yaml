@@ -1,0 +1,3 @@
+_target_: reg_malawi.helpers.model_helpers.RegAggregated
+model_name: maxvit_base_tf_512.in21k_ft_in1k
+

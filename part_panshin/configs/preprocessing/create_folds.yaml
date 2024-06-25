@@ -1,0 +1,10 @@
+n_splits: 4
+input_path: data/Train.csv
+output_dir: data/annotations
+
+hydra:
+  run:
+    dir: '.'
+  sweep:
+    dir: '.'
+    subdir: '.'

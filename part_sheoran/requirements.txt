@@ -1,0 +1,11 @@
+opencv-python==4.10.0.84
+torch==1.13.1 --index-url https://download.pytorch.org/whl/cu171
+torchvision==0.14.1 --index-url https://download.pytorch.org/whl/cu171
+openmim==0.3.9
+mmcv-full==1.7.0 -f https://download.openmmlab.com/mmcv/dist/cu117/1.13/index.html
+fairscale==0.4.13
+timm==1.0.7
+yapf==0.40.1
+kaggle==1.6.14
+scikit-learn==1.5.0
+numpy==1.24.1

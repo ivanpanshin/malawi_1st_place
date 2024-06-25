@@ -1,0 +1,6 @@
+val_0:
+  _target_: reg_malawi.helpers.dataset_helpers.DatasetCompetition
+  dataset_root: data/Images
+  ann_path: data/annotations/val_fold_0.csv
+  split: val
+  multiplier: 1

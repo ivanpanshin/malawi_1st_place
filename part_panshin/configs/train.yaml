@@ -1,0 +1,17 @@
+defaults:
+  - _self_
+  - trainer: train
+  - model: maxvit_aggregated
+  - loss: mae_aggregated
+  - metric: metric
+  - optimizer: adamw
+  - scheduler: cosine_annealing
+  - accelerate: gpu_amp_bfloat16
+  - dataset: [train/train, val/val]
+  - loader: b16_w4
+  - logging: mlflow
+  - collate_fn:
+  - sampler: distributed
+  - transform: transform
+  - callbacks: train
+  - hydra: default

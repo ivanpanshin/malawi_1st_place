@@ -1,0 +1,8 @@
+- _target_: reg_malawi.callbacks.model.ChangeModelDevice
+- _target_: reg_malawi.callbacks.model.TrainEval
+- _target_: reg_malawi.callbacks.model.SaveModel
+  top_k: 10
+- _target_: reg_malawi.callbacks.logging.CalculateETA
+- _target_: reg_malawi.callbacks.logging.LogMetrics_Mlflow
+- _target_: reg_malawi.callbacks.model.EMA
+  ema_decay_per_epoch: 0.3

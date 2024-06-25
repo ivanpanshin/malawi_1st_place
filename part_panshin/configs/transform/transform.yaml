@@ -1,0 +1,7 @@
+train:
+  _target_: reg_malawi.helpers.augs_helpers.train
+  img_size: 512
+
+val:
+  _target_: reg_malawi.helpers.augs_helpers.val
+  img_size: 512

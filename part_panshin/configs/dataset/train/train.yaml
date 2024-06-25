@@ -1,0 +1,6 @@
+train:
+  _target_: reg_malawi.helpers.dataset_helpers.DatasetCompetition
+  dataset_root: data/Images
+  ann_path: data/annotations/train_fold_0.csv
+  split: train
+  multiplier: 10

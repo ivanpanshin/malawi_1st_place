@@ -1,0 +1,7 @@
+trainer:
+  _target_: reg_malawi.trainer.trainer.Trainer
+  _recursive_: false
+
+trainer_hyps:
+  num_epochs: 60
+  debug_iters:
