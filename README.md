@@ -4,6 +4,8 @@ There are 2 parts of the solution - Regression in `part_panshin` and Object Dete
 
 Note that these parts require different cuda versions, drivers, GPU architectures, etc. All the specifications are listed in the corresponding dirs (`part_panshin` and `part_sheoran`).
 
+In case of any issues, simply reach out at ivan.panshin@protonmail.com and I will solve all the issues for you.
+
 ## Reproduce inference
 1. Create submission by Regression model. Look at `part_panshin/README.md/Install` and `part_panshin/README.md/Reproduce inference`.
 2. Create submission by Object Detection model. Look at `part_sheoran/README.md/Install` and `part_sheoran/README.md/Reproduce inference`
