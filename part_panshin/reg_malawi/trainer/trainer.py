@@ -245,6 +245,27 @@ class Trainer:
 
         self._call_callback_hooks("on_fit_end")
 
+    def save_preds(
+        self,
+        total_ids,
+        total_preds_other,
+        total_preds_tin,
+        total_preds_thatch,
+        output_path,
+    ):
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        ids, preds = [], []
+        for id, other_pred, tin_pred, thatch_pred in zip(total_ids, total_preds_other, total_preds_tin,
+                                                         total_preds_thatch):
+            labels = [other_pred, tin_pred, thatch_pred]
+            for index, label in enumerate(labels):
+                ids.append(f'{id}_{index + 1}')
+                preds.append(max(label.item(), 0))
+
+        sub = pd.DataFrame({'image_id': ids, 'Target': preds})
+        sub.to_csv(output_path, index=False)
+        logging.info(f'saved to {output_path}')
+
     def calculate_test_preds(
         self,
     ) -> None:
@@ -252,25 +273,6 @@ class Trainer:
         Returns:
             None.
         """
-        @staticmethod
-        def save_preds(
-            total_ids,
-            total_preds_other,
-            total_preds_tin,
-            total_preds_thatch,
-            output_path,
-        ):
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            ids, preds = [], []
-            for id, other_pred, tin_pred, thatch_pred in zip(total_ids, total_preds_other, total_preds_tin, total_preds_thatch):
-                labels = [other_pred, tin_pred, thatch_pred]
-                for index, label in enumerate(labels):
-                    ids.append(f'{id}_{index+1}')
-                    preds.append(max(label.item(), 0))
-
-            sub = pd.DataFrame({'image_id': ids, 'Target': preds})
-            sub.to_csv(output_path, index=False)
-            logging.info(f'saved to {output_path}')
 
         self._call_callback_hooks("on_val_start")
         assert hasattr(self.loaders, 'test'), "In order to calculate test preds, test dataset should be present"
@@ -293,7 +295,7 @@ class Trainer:
             total_preds_tin[start_index:end_index] = preds['tin_preds'].cpu()
             total_preds_thatch[start_index:end_index] = preds['thatch_preds'].cpu()
 
-        save_preds(
+        self.save_preds(
             total_ids=total_ids,
             total_preds_other=total_preds_other,
             total_preds_tin=total_preds_tin,

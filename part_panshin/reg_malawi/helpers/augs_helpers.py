@@ -60,14 +60,14 @@ class CoarseDropoutBboxes(A.CoarseDropout):
         super().__init__(*args, **kwargs)
         self.max_area_percentage = max_area_percentage
 
-    @staticmethod
-    def bbox_area(bbox):
+#    @staticmethod
+    def bbox_area(self, bbox):
         """Calculate the area of a bounding box in Pascal VOC format."""
         x_min, y_min, x_max, y_max = bbox
         return (x_max - x_min) * (y_max - y_min)
 
-    @staticmethod
-    def intersection_area(bbox1, bbox2):
+    #@staticmethod
+    def intersection_area(self, bbox1, bbox2):
         """Calculate the intersection area of two bounding boxes in Pascal VOC format."""
         x1_min, y1_min, x1_max, y1_max = bbox1
         x2_min, y2_min, x2_max, y2_max = bbox2
