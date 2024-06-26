@@ -54,6 +54,7 @@ The main idea is to combine a pure Regression model (that predict number of hous
 5. Inference
 
 - To inference the regression model on new data, create a new `.csv` file similar to `data/annotations/test.csv` that contains base names of files in `data/Images`. Then specify path to that `.csv` in `configs/dataset/test/test.csv` at `ann_path`. The predictions will be saved at the path specified at `configs/trainer/test.yaml`.
+- To inference the object detection model on new data, have a new SampleSubmission.csv that has the same format as competition one, and have all the images in `data/test_images`.
 - When it comes to re-training, we recommend training from scratch, since it's easier in terms of setting up LRs for each re-training.
 
 6. Run time
