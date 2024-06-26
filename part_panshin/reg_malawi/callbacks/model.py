@@ -42,7 +42,7 @@ class SaveModel(Callback):
         self.top_items = []
         self.top_k = top_k
 
-    @staticmethod
+#    @staticmethod
     def run_only_on_cuda0(func):
         def wrapper(self, trainer):
             if trainer.device == "cuda:0":
@@ -50,7 +50,7 @@ class SaveModel(Callback):
 
         return wrapper
 
-    @staticmethod
+#    @staticmethod
     def with_ema_check(func):
         def wrapper(self, trainer, metric_improved, item, deleted_item_path):
             if hasattr(trainer, "ema"):

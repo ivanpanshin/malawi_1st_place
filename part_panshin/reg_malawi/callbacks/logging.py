@@ -16,19 +16,19 @@ class LogMetrics_Mlflow(Callback):
     def __init__(self):
         super().__init__()
 
-    @staticmethod
+#    @staticmethod
     def run_only_on_cuda0(func):
         def wrapper(self, trainer, *args, **kwargs):
             if trainer.device == "cuda:0":
                 return func(self, trainer, *args, **kwargs)
         return wrapper
 
-    @staticmethod
-    def _log_metrics(trainer, metrics, prefix, step):
+#    @staticmethod
+    def _log_metrics(self, trainer, metrics, prefix, step):
         mlflow.log_metrics({f"{prefix}/{k}": v for k, v in metrics.items()}, step=step)
 
-    @staticmethod
-    def _log_transforms(trainer, loader_name):
+#    @staticmethod
+    def _log_transforms(self, trainer, loader_name):
         if hasattr(trainer.loaders[loader_name].dataset, 'transform') and \
         trainer.loaders[loader_name].dataset.transform:
             k = f'{loader_name}_transform'
