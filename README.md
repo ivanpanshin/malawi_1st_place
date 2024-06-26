@@ -61,5 +61,5 @@ The main idea is to combine a pure Regression model (that predict number of hous
 - The regression training takes about 7 hours on 4 x A6000 Ada.
 - The regression inference takes about 1 minute on 1 x A6000 Ada.
 
-- The Object Detection training takes about 16 hours on 4 x RTX 3090. 
+- The Object Detection training takes about 10 hours on 4 x RTX 3090. 
 - The Object Detection inference takes about 20 minutes on 1 x RTX 3090. 
