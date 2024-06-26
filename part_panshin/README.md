@@ -16,6 +16,11 @@ pip install -r requirements.dev.txt
 pip install -r requirements.txt
 ```
 
+Adding pythonpath is really important for what we are going to be doing later, also if anything goes wrong, wrong python version is the first thing to blame
+```
+export PYTHONPATH=$(pwd):$PYTHONPATH
+```
+
 ## Reproduce inference
 Note that pipeline is tested in the following settings:
 ```
