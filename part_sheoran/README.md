@@ -4,7 +4,7 @@
 ```
 conda create -n arm_mmdet anaconda python=3.9
 conda activate arm_mmdet
-pip install -r requirements.txt
+pip install -r requirements.txt --no-cache
 cd Co-DETR/
 pip install -v -e . --no-cache-dir
 cd ..
